@@ -1,5 +1,6 @@
 package hellspawn287.springbootcreditrestwithdocker.api.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,4 +28,7 @@ public class CustomerDTO {
 
     @Past
     private Date dateOfBirth;
+
+    @JsonProperty("customer_url")
+    private String customerURL;
 }

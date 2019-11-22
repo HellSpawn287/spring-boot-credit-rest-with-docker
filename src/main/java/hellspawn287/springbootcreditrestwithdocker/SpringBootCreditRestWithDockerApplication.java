@@ -9,5 +9,4 @@ public class SpringBootCreditRestWithDockerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootCreditRestWithDockerApplication.class, args);
 	}
-
 }
