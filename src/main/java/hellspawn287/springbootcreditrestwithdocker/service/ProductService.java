@@ -17,5 +17,4 @@ public interface ProductService {
     ProductDTO patchProduct(Long id, ProductDTO productDTO) throws ResourceNotFoundException;
 
     void deleteProductById(Long id);
-
 }

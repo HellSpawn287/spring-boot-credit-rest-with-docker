@@ -2,6 +2,7 @@ package hellspawn287.springbootcreditrestwithdocker.service;
 
 import hellspawn287.springbootcreditrestwithdocker.api.mapper.CustomerMapper;
 import hellspawn287.springbootcreditrestwithdocker.api.model.CustomerDTO;
+import hellspawn287.springbootcreditrestwithdocker.controllers.CustomerController;
 import hellspawn287.springbootcreditrestwithdocker.domain.Customer;
 import hellspawn287.springbootcreditrestwithdocker.repositories.CustomerRepository;
 import org.junit.Before;
@@ -86,7 +87,7 @@ public class CustomerServiceImplTest {
 
         //then
         assertEquals(customerDTO.getFirstname(), savedDTO.getFirstname());
-        assertEquals("/api/customers" + "/1", savedDTO.getCustomerURL());
+        assertEquals(CustomerController.BASE_URL + "/1", savedDTO.getCustomerURL());
     }
 
     @Test
@@ -107,7 +108,7 @@ public class CustomerServiceImplTest {
 
         // then
         assertEquals(customerDTO.getFirstname(), savedDTO.getFirstname());
-        assertEquals("/api/customers" + "/1", savedDTO.getCustomerURL());
+        assertEquals(CustomerController.BASE_URL + "/1", savedDTO.getCustomerURL());
     }
 
     @Test

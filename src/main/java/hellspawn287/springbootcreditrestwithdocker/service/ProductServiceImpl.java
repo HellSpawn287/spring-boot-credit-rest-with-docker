@@ -2,6 +2,7 @@ package hellspawn287.springbootcreditrestwithdocker.service;
 
 import hellspawn287.springbootcreditrestwithdocker.api.mapper.ProductMapper;
 import hellspawn287.springbootcreditrestwithdocker.api.model.ProductDTO;
+import hellspawn287.springbootcreditrestwithdocker.controllers.ProductController;
 import hellspawn287.springbootcreditrestwithdocker.domain.Product;
 import hellspawn287.springbootcreditrestwithdocker.repositories.ProductRepository;
 import lombok.NoArgsConstructor;
@@ -95,8 +96,7 @@ public class ProductServiceImpl implements ProductService {
         productRepository.deleteById(id);
     }
 
-    //    TODO: Base url
     private String getProductUrl(Long id) {
-        return "/api/products" + "/" + id;
+        return ProductController.BASE_URL + "/" + id;
     }
 }

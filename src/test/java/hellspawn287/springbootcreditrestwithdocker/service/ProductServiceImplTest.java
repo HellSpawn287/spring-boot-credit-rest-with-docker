@@ -2,6 +2,7 @@ package hellspawn287.springbootcreditrestwithdocker.service;
 
 import hellspawn287.springbootcreditrestwithdocker.api.mapper.ProductMapper;
 import hellspawn287.springbootcreditrestwithdocker.api.model.ProductDTO;
+import hellspawn287.springbootcreditrestwithdocker.controllers.ProductController;
 import hellspawn287.springbootcreditrestwithdocker.domain.Product;
 import hellspawn287.springbootcreditrestwithdocker.repositories.ProductRepository;
 import org.junit.Before;
@@ -22,7 +23,7 @@ import static org.mockito.Mockito.when;
 
 public class ProductServiceImplTest {
     private static final Long CUSTOMER_ID = 2L;
-    private static final String NAME = "Peter's Toolbox";
+    private static final String NAME = "Bank's Toolbox";
     private static final Long VALUE = 30L;
 
     @Mock
@@ -82,7 +83,7 @@ public class ProductServiceImplTest {
         //then
         assertEquals(productDTO.getName(), savedDTO.getName());
         assertEquals(productDTO.getValue(), savedDTO.getValue());
-        assertEquals("/api/products" + "/1", savedDTO.getProductURL());
+        assertEquals(ProductController.BASE_URL + "/1", savedDTO.getProductURL());
     }
 
     @Test
@@ -101,7 +102,7 @@ public class ProductServiceImplTest {
         // then
         assertEquals(productDTO.getName(), savedDTO.getName());
         assertEquals(productDTO.getValue(), savedDTO.getValue());
-        assertEquals("/api/products" + "/1", savedDTO.getProductURL());
+        assertEquals(ProductController.BASE_URL + "/1", savedDTO.getProductURL());
     }
 
     @Test

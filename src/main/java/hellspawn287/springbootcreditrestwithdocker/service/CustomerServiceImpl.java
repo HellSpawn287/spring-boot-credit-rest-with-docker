@@ -2,6 +2,7 @@ package hellspawn287.springbootcreditrestwithdocker.service;
 
 import hellspawn287.springbootcreditrestwithdocker.api.mapper.CustomerMapper;
 import hellspawn287.springbootcreditrestwithdocker.api.model.CustomerDTO;
+import hellspawn287.springbootcreditrestwithdocker.controllers.CustomerController;
 import hellspawn287.springbootcreditrestwithdocker.domain.Customer;
 import hellspawn287.springbootcreditrestwithdocker.repositories.CustomerRepository;
 import lombok.NoArgsConstructor;
@@ -95,8 +96,7 @@ public class CustomerServiceImpl implements CustomerService {
         customerRepository.deleteById(id);
     }
 
-    //    TODO: Base url
     private String getCustomerUrl(Long id) {
-        return "/api/customers" + "/" + id;
+        return CustomerController.BASE_URL + "/" + id;
     }
 }
